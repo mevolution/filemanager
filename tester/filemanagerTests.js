@@ -23,7 +23,7 @@
 
         it("Should return a link to the file (if not dir)",function (){
             var t = scope.getLink("ControlCenter3/IMG_0963.JPG");
-            expect(t).toEqual("http://localhost:8888/filemanager/testmapp/ControlCenter3/IMG_0963.JPG");
+            expect(t).toEqual("/filemanager/testmapp/ControlCenter3/IMG_0963.JPG");
 
         });
         it("Should return a link to the dir and set of the rest API",function (){
@@ -53,57 +53,42 @@
 
         it("Should return an icon or the image depending on extension", function(){
            var t = scope.getIcon("file","DSC_5661.jpg","jpg")
-           expect(t).toEqual("http://localhost:8888/filemanager/testmapp/DSC_5661.jpg");
+           expect(t).toEqual("/filemanager/testmapp/DSC_5661.jpg");
         });
         it("should return a link to a folder Icon if a folder", function(){
             var t = scope.getIcon("dir","ControlCenter3","");
-            expect(t).toEqual("http://localhost:8888/filemanager/img/folder_icon.jpg");
+            expect(t).toEqual("/filemanager/img/folder_icon.png");
 
         });
         it("should return a link to a pdf Icon if a pdf file", function(){
             var t = scope.getIcon("file","jojjemen.pdf","pdf");
-            expect(t).toEqual("http://localhost:8888/filemanager/img/pdf_icon.jpg");
+            expect(t).toEqual("/filemanager/img/pdf_icon.jpg");
 
         });
         it("should return a link to a powerpoint Icon if evrything else", function(){
             var t = scope.getIcon("file","jojjemen.pdf","pptx");
-            expect(t).toEqual("http://localhost:8888/filemanager/img/powerpoint_icon.jpg");
+            expect(t).toEqual("/filemanager/img/powerpoint_icon.jpg");
             var t = scope.getIcon("file","jojjemen.pdf","ppt");
-            expect(t).toEqual("http://localhost:8888/filemanager/img/powerpoint_icon.jpg");
+            expect(t).toEqual("/filemanager/img/powerpoint_icon.jpg");
         });
         it("should return a link to a excel Icon", function(){
             var t = scope.getIcon("file","jojjemen.xlsx","xlsx");
-            expect(t).toEqual("http://localhost:8888/filemanager/img/excel_icon.jpg");
+            expect(t).toEqual("/filemanager/img/excel_icon.jpg");
             var t = scope.getIcon("file","jojjemen.xlsx","xls");
-            expect(t).toEqual("http://localhost:8888/filemanager/img/excel_icon.jpg");
+            expect(t).toEqual("/filemanager/img/excel_icon.jpg");
 
         });
         it("should return a link to a word Icon", function(){
             var t = scope.getIcon("file","jojjemen.pdf","docx");
-            expect(t).toEqual("http://localhost:8888/filemanager/img/word_icon.jpg");
+            expect(t).toEqual("/filemanager/img/word_icon.jpg");
             var t = scope.getIcon("file","jojjemen.pdf","doc");
-            expect(t).toEqual("http://localhost:8888/filemanager/img/word_icon.jpg");
+            expect(t).toEqual("/filemanager/img/word_icon.jpg");
         });
         it("should return a link to a file Icon if evrything else", function(){
             var t = scope.getIcon("file","jojjemen.pdf","xxx");
-            expect(t).toEqual("http://localhost:8888/filemanager/img/document_icon.png");
+            expect(t).toEqual("/filemanager/img/document_icon.png");
 
         });
-
-
-
-
-
-
-
-       /*
-        it("should load a new directorylist based on click",function (){
-            var t = scope.goIntoFolder("ControlCenter3","dir");
-            //  expect(t).toEqual("#");
-
-        });
-        */
-
 
     });
 
