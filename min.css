@@ -1,0 +1,15 @@
+/* CSS Document */
+
+.rod {
+	 background-color:#F63;
+}
+
+.bla {
+ background-color:#00CCFF;	
+}
+body .modal-create {
+//new custom width
+width: 300px;
+//must be half of the width, minus scrollbar on the left (30px)
+margin: -120px 0 0 -150px;
+}
