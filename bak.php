@@ -23,7 +23,7 @@
             <form method="POST" action="" accept-charset="UTF-8">
                 <?php if($_REQUEST[errorLogin]){?>
                 <div class="alert alert-error">
-                    <a class="close" data-dismiss="alert" href="#">x</a>Incorrect Username or Password!
+                    <a class="close" data-dismiss="alert" href="#">x</a>.Incorrect Username or Password!
                 </div>
                 <?php } ?>
                 <input class="span3" placeholder="Username" type="text" name="username">
