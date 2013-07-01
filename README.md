@@ -1,4 +1,4 @@
-filemanager
+Filemanager
 ===========
 
-A restful filemanager in php using AngularJs as frontend by Mattias Persson Mevolution
+A restful filemanager in php using AngularJs as frontend by Mattias Persson
