@@ -3,7 +3,7 @@ function FileManager ($scope,$http,$timeout) {
     $scope.rootLinkFolder ="/filemanager/testmapp/";
     $scope.rootUploadFolder ="/filemanager/plupload/upload_tmp/";
     $scope.rootImageFolder = "/filemanager/img/";
-    $scope.rootAPIFolder = "http://localhost:8888/filemanager/restServer/";
+    $scope.rootAPIFolder = "/filemanager/restserver/";
     $scope.currentDir = [];
     $scope.fileList = {};
     $scope.status = "";
@@ -144,14 +144,14 @@ function FileManager ($scope,$http,$timeout) {
 
     // File operations -----------------------
     $scope.getFiles = function (folder) {
-        $http.get('restserver/listFiles/' + folder).success(function(data) {
+        $http.get('restServer/listfiles/' + folder).success(function(data) {
             $scope.fileList = data;
         });
     }
     $scope.createDir = function (name){
         dir = _arrayToString($scope.currentDir,"dir","/");
         ut = 'json={"dir":"'+ dir +'","name":"'+ name +'"}';
-        $http.put("restserver/createFolder/",ut).success(function(response) {
+        $http.put("restServer/createFolder/",ut).success(function(response) {
             _updateFileList();
         });
 
@@ -171,7 +171,7 @@ function FileManager ($scope,$http,$timeout) {
         dir = _arrayToString($scope.currentDir,"dir","/");
         if (confirm("Är du säker?")){
             ut = 'json={"dir":"'+ dir + '/"}';
-            $http.put("restserver/deleteFolder/",ut).success(function(response) {
+            $http.put("restServer/deleteFolder/",ut).success(function(response) {
                 if(response == 1){
                     $scope.backDir();
                 }
@@ -183,7 +183,7 @@ function FileManager ($scope,$http,$timeout) {
     };
     _deleteDir = function(dir){
         ut = 'json={"dir":"'+ dir + '/"}';
-        $http.put("restserver/deleteFolder/",ut).success(function(response) {
+        $http.put("restServer/deleteFolder/",ut).success(function(response) {
             if(response == 1){
                 _updateFileList();
             }
@@ -194,7 +194,7 @@ function FileManager ($scope,$http,$timeout) {
     }
     _deleteFile = function(file){
         ut = 'json={"file":"'+ file +'"}';
-        $http.put("restserver/deleteFile/",ut).success(function(response) {
+        $http.put("restServer/deleteFile/",ut).success(function(response) {
             if(response == 1){
                 _updateFileList();
             }
@@ -205,7 +205,7 @@ function FileManager ($scope,$http,$timeout) {
     }
     _moveFile = function(src,dest) {
         ut = 'json={"src":"'+ src +'","dest":"'+ dest +'"}';
-        $http.put("restserver/moveFile/",ut).success(function(response) {
+        $http.put("restServer/moveFile/",ut).success(function(response) {
             if(response == 1){
                 $scope.setStatus('File uploaded!','Info',1);
                 _updateFileList();
