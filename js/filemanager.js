@@ -212,7 +212,8 @@ function FileManager ($scope,$http,$timeout) {
                // return true;
             }
             else {
-                $scope.setStatus(response,'Varning',1);
+                $scope.setStatus(response,'Varning',3);
+                console.log(response);
             }
         });
     }
