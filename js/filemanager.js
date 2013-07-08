@@ -38,7 +38,6 @@ function FileManager ($scope,$http,$timeout) {
     }
 
     // Dir listings -----------
-
     $scope.getIcon = function (type,name,ext) {
 
        if(type=='dir'){
@@ -94,10 +93,6 @@ function FileManager ($scope,$http,$timeout) {
             return "_blank";
         }
     }
-
-
-
-
     $scope.backDir = function (){
         $scope.currentDir.pop();
         _updateFileList();
@@ -146,8 +141,6 @@ function FileManager ($scope,$http,$timeout) {
             break;
         }
     }
-
-
 
     // File operations -----------------------
     $scope.getFiles = function (folder) {
@@ -257,7 +250,6 @@ function FileManager ($scope,$http,$timeout) {
 
 
    // Init -----------
-    // _moveFile("DSC_5662.jpg","m1/DSC_5662.jpg");
     $scope.getFiles("");
 
 }

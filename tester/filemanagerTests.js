@@ -7,18 +7,13 @@
         beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
             $httpBackend = _$httpBackend_;
             $httpBackend.expectGET('restServer/listfiles/').respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
-
             scope = $rootScope.$new();
             ctrl = $controller(FileManager, {$scope: scope});
         }));
 
 
-        it('Skall ladda in två stycken poster i fileList', function() {
-            //TODO Lägg till enhetstester för att ladda json
-        });
-
-        it("Should return the name",function () {
-           //  expect(scope.mittNamn).toMatch("Mattias");
+        it('Shall load two files into the fileList', function() {
+            // TODO Lägg till enhetstester för att ladda json
         });
 
         it("Should return a link to the file (if not dir)",function (){
@@ -33,7 +28,6 @@
             expect(t).toEqual("_blank");
         });
 
-
         it("Should return a link to the dir and set of the rest API",function (){
             var t = scope.getLink("ControlCenter3","dir");
             expect(t).toEqual("#");
@@ -44,7 +38,6 @@
         var t = scope.openDir("ControlCenter3","dir");
         $httpBackend.flush();
         expect(scope.currentDir[0]).toEqual({dir:"ControlCenter3"});
-
         });
 
         it("Should return true if the input is an image", function (){
