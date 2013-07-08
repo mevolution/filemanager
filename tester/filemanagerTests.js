@@ -24,27 +24,26 @@
         it("Should return a link to the file (if not dir)",function (){
             var t = scope.getLink("ControlCenter3/IMG_0963.JPG");
             expect(t).toEqual("/filemanager/testmapp/ControlCenter3/IMG_0963.JPG");
+        });
 
+        it("Should return _blank if file and _self if dir)",function (){
+            var t = scope.getTarget("dir");
+            expect(t).toEqual("_self");
+            var t = scope.getTarget("file");
+            expect(t).toEqual("_blank");
         });
-        it("Should set the target to _blank if the target is a file not a folder",function (){
-            var t = scope.getLink("ControlCenter3/IMG_0963.JPG");
-            expect(scope.target).toEqual("_blank");
-        });
+
 
         it("Should return a link to the dir and set of the rest API",function (){
             var t = scope.getLink("ControlCenter3","dir");
             expect(t).toEqual("#");
         });
-        it("Should set the target for the link to _self if folder",function (){
-            var t = scope.getLink("ControlCenter3","dir");
-            expect(scope.target).toEqual("_self");
-        });
 
-            it("Add a folder to the current folder array",function (){
-            $httpBackend.expectGET('restServer/listfiles/ControlCenter3/').respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
-            var t = scope.openDir("ControlCenter3","dir");
-            $httpBackend.flush();
-            expect(scope.currentDir[0]).toEqual({dir:"ControlCenter3"});
+        it("Add a folder to the current folder array",function (){
+        $httpBackend.expectGET('restServer/listfiles/ControlCenter3/').respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
+        var t = scope.openDir("ControlCenter3","dir");
+        $httpBackend.flush();
+        expect(scope.currentDir[0]).toEqual({dir:"ControlCenter3"});
 
         });
 

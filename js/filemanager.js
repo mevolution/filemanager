@@ -77,19 +77,23 @@ function FileManager ($scope,$http,$timeout) {
     }
 
 
-
-
     $scope.getLink = function (name,type) {
         if(type == "dir") {
             return "#" ;
-            $scope.target ="_self";
         }
         else {
-            $scope.target ="_blank";
             return $scope.rootLinkFolder +  _arrayToString($scope.currentDir,"dir","/") +  name;
         }
     }
 
+    $scope.getTarget = function (type) {
+        if(type == "dir") {
+            return "_self";
+        }
+        else {
+            return "_blank";
+        }
+    }
 
 
 

@@ -102,7 +102,7 @@ header('Location: /filemanager/index.php?errorLogin=true');
 
                  <tr ng-repeat="file in fileList| filter:search.txt">
 
-                     <td><a href="{{getLink(file.name,file.type)}}"  ng-click="openDir(file.name,file.type)"><img src="{{getIcon(file.type,file.name,file.ext)}}" class="file-image"  width="40" /> {{file.name}}</a></td>
+                     <td><a href="{{getLink(file.name,file.type)}}" target="{{getTarget(file.type)}}" ng-click="openDir(file.name,file.type)"><img src="{{getIcon(file.type,file.name,file.ext)}}" class="file-image"  width="40" /> {{file.name}}</a></td>
                      <td>{{file.size}}</td>
                      <td><a href="#" ng-click="delete(file.name,file.type)"><i style="color: red" class="icon-remove icon-large"></i> </a></td>
                  </tr>
