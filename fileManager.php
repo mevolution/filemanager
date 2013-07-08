@@ -117,7 +117,6 @@ header('Location: /filemanager/index.php?errorLogin=true');
          <h5>Mevolution 2013</h5>
      </div>
  </footer>
-t
  <!-- modal-gallery is the modal dialog used for the image gallery -->
 <div id="createFolderModal" class="modal hide fade modal-create"  tabindex="-1">
     <div class="modal-header">
@@ -133,25 +132,5 @@ t
         </a>
     </div>
 </div>
-
-
-
-<script>
-
-    $(document).ready(function() {
-
-
-
-
-
-
-
-    });
-
-
-
-</script>
-
-
 </body>
 </html>
