@@ -6,7 +6,7 @@
 
         beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
             $httpBackend = _$httpBackend_;
-            $httpBackend.expectGET('restserver/listFiles/').respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
+            $httpBackend.expectGET('restServer/listfiles/').respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
 
             scope = $rootScope.$new();
             ctrl = $controller(FileManager, {$scope: scope});
@@ -26,14 +26,22 @@
             expect(t).toEqual("/filemanager/testmapp/ControlCenter3/IMG_0963.JPG");
 
         });
+        it("Should set the target to _blank if the target is a file not a folder",function (){
+            var t = scope.getLink("ControlCenter3/IMG_0963.JPG");
+            expect(scope.target).toEqual("_blank");
+        });
+
         it("Should return a link to the dir and set of the rest API",function (){
             var t = scope.getLink("ControlCenter3","dir");
             expect(t).toEqual("#");
         });
+        it("Should set the target for the link to _self if folder",function (){
+            var t = scope.getLink("ControlCenter3","dir");
+            expect(scope.target).toEqual("_self");
+        });
 
-
-        it("Add a folder to the current folder array",function (){
-            $httpBackend.expectGET('restserver/listFiles/ControlCenter3/').respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
+            it("Add a folder to the current folder array",function (){
+            $httpBackend.expectGET('restServer/listfiles/ControlCenter3/').respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
             var t = scope.openDir("ControlCenter3","dir");
             $httpBackend.flush();
             expect(scope.currentDir[0]).toEqual({dir:"ControlCenter3"});
