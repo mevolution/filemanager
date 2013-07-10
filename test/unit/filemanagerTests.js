@@ -1,7 +1,7 @@
 // My tests for fileManager controller
 'use strict';
 
-    describe('Xhr tester', function(){
+    describe('Filemanger tests:', function(){
         var scope, ctrl, $httpBackend;
 
         beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
@@ -87,18 +87,7 @@
         it("should return a link to a file Icon if evrything else", function(){
             var t = scope.getIcon("file","jojjemen.pdf","xxx");
            expect(t).toEqual("/filemanager/img/document_icon.png");
-
         });
-
-        // My e2e tests
-/*
-        describe('Filemanager', function() {
-            it('should list 4 items in the filelist', function() {
-                expect(repeater('ul li').count()).toEqual(10);
-            });
-        });
-
-*/
 
     });
 
