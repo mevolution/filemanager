@@ -87,7 +87,7 @@
         it("should return a link to a file Icon if evrything else", function(){
             var t = scope.getIcon("file","jojjemen.pdf","xxx");
            expect(t).toEqual("/filemanager/img/document_icon.png");
-fsdfsdfsa
+
         });
 
         // My e2e tests
