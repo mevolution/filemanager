@@ -3,11 +3,11 @@ basePath = '../';
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  'tester/lib/angular/angular-1.0.1.min.js',
-  'tester/lib/angular/angular-mocks.js',
+  'test/lib/angular/angular-1.0.1.min.js',
+  'test/lib/angular/angular-mocks.js',
   'plupload/js/plupload.full.js',
   'js/filemanager.js',
-  'tester/*.js'
+  'test/unit/*.js'
 ];
 
 autoWatch = true;

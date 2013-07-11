@@ -16,6 +16,10 @@ if($_REQUEST[logout]=="true") {
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
+    <!--[if lte IE 8]>
+    <script src="lib/json3.min.js"></script>
+    <![endif]-->
+
 
 <title>Login filemanager</title>
  <!-- Bootstrap -->
@@ -41,15 +45,15 @@ if($_REQUEST[logout]=="true") {
                             <a class="close" data-dismiss="alert" href="#">x</a>Incorrect Username or Password!
                         </div>
                         <?php } ?>
-                        <input class="span3" placeholder="Username" type="text" name="email">
-                        <input class="span3" placeholder="Password" type="password" name="passwd">
+                        <input class="span3" placeholder="Username" type="text" name="email" ng-model="email">
+                        <input class="span3" placeholder="Password" type="password" name="passwd" ng-model="passwd">
 
                         <!--
                         <label class="checkbox">
                             <input type="checkbox" name="remember" value="1"> Remember Me
                         </label>
                         -->
-                        <button class="btn-info btn" type="submit">Login</button>
+                        <button id="login_button" class="btn-info btn" type="submit">Login</button>
                     </form>
                 </div>
             </div>

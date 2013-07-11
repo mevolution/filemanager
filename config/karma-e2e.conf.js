@@ -8,13 +8,18 @@ files = [
 
 autoWatch = false;
 
-browsers = ['Chrome'];
+browsers = ['Chrome','Firefox','Safari'];
 
 singleRun = true;
 
 proxies = {
-  '/': 'http://localhost:8000/'
+  '/': 'http://localhost:8888/filemanager/'
 };
+// cli runner port
+runnerPort = 8888;
+
+// web server port
+port = 8888;
 
 junitReporter = {
   outputFile: 'test_out/e2e.xml',

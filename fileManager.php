@@ -7,17 +7,21 @@ $s = new Session("./users.json");
 if($s->login($_REQUEST["email"],md5($_REQUEST["passwd"]))) {
 $l=true;
 }else {
-header('Location: /filemanager/index.php?errorLogin=true');
+header('Location: ./index.php?errorLogin=true');
 }
 
 ?>
 <!DOCTYPE html>
-<html ng-app xmlns="http://www.w3.org/1999/html">
+<html ng-app xmlns="http://www.w3.org/1999/html" id="ng-app">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!--[if lte IE 8]>
+    <script src="lib/json3.min.js"></script>
+    <![endif]-->
 
     <title>Filemanager</title>
     <!-- Bootstrap -->
