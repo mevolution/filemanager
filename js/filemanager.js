@@ -228,8 +228,8 @@ function FileManager ($scope,$http,$timeout) {
         browse_button : 'top-menu-upload',
        //  container: 'uploadContainer',
         url : 'upload.php',
-      //  flash_swf_url : 'plupload/js/plupload.flash.swf',
-      //  silverlight_xap_url : 'plupload/js/plupload.silverlight.xap',
+        flash_swf_url : 'plupload/js/plupload.flash.swf',
+        silverlight_xap_url : 'plupload/js/plupload.silverlight.xap',
         filters : [
             {title : "Image files", extensions : "jpg,gif,png,pdf"},
             {title : "Zip files", extensions : "zip"},
