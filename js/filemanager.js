@@ -156,7 +156,7 @@ function FileManager ($scope,$http,$timeout) {
         });
 
     }
-    $scope.delete = function(file,type){
+    $scope.remove = function(file,type){
         path = _arrayToString($scope.currentDir,"dir","/") + file ;
         if(confirm("Är du säker? detta går inte att ångra...")) {
             if(type=='dir'){
