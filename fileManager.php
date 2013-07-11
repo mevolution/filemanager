@@ -12,7 +12,7 @@ header('Location: ./index.php?errorLogin=true');
 
 ?>
 <!DOCTYPE html>
-<html ng-app xmlns="http://www.w3.org/1999/html" id="ng-app">
+<html ng-app xmlns:ng="http://angularjs.org" id="ng-app">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +21,19 @@ header('Location: ./index.php?errorLogin=true');
 
     <!--[if lte IE 8]>
     <script src="lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!--[if lte IE 8]>
+    <script>
+        document.createElement('ng-include');
+        document.createElement('ng-pluralize');
+        document.createElement('ng-view');
+
+        // Optionally these for CSS
+        document.createElement('ng:include');
+        document.createElement('ng:pluralize');
+        document.createElement('ng:view');
+    </script>
     <![endif]-->
 
     <title>Filemanager</title>
