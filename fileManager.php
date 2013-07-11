@@ -56,7 +56,9 @@ header('Location: ./index.php?errorLogin=true');
     <link type="text/css" href="js/purr-notify/purr.css" rel="stylesheet">
 
     <script src="js/filemanager.js"></script>
-
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 </head>
 <body ng-controller="FileManager">
 
