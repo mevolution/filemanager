@@ -71,34 +71,6 @@ class FileManager {
 
 	}
 
-/*
-	function getFileTree ($dir) {
-		if(!$array_out) $array_out = array();	
-		$array_out[$dir] = $this->getFiles($dir);
-			echo " ut <br>";
-			foreach ($array_out as $key => $value) {
-				echo $key[$value] . " " . $value . " <br>";
-				foreach($value as $k => $v) {
-					echo $k . " " . $v . " <br>";
-				}
-				
-			}
-
-
-
-
-		while() { 
-	     
-			} else if (is_dir($dir.'/'.$file) && ($file != '.') && ($file != '..')) {       
-			     $this->getFileTree('/'.$file.'/');  
-			} 
-	    } 
-
-       return $array_out; 
-	}
-*/
-
-
 	function createFolder($name,$dir) {
 		// TODO Check that dir exists
 	   mkdir($this->baseDir . $dir ."/" . $name, 0755);
