@@ -62,7 +62,7 @@ session_start();
 		const DB_USER = "root";
 		const DB_PASSWORD = "arun";
 		const DB = "users";
-        private $fileBaseDir = "filemanager/testmapp/";
+        private $fileBaseDir = "filemanager/fileroot/";
         private $FileM;
 		private $db = NULL;
 	

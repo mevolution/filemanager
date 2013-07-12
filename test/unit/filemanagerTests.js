@@ -18,7 +18,7 @@
 
         it("Should return a link to the file (if not dir)",function (){
             var t = scope.getLink("ControlCenter3/IMG_0963.JPG");
-            expect(t).toEqual("/filemanager/testmapp/ControlCenter3/IMG_0963.JPG");
+            expect(t).toEqual("/filemanager/fileroot/ControlCenter3/IMG_0963.JPG");
         });
 
         it("Should return _blank if file and _self if dir)",function (){
@@ -53,7 +53,7 @@
 
         it("Should return an icon or the image depending on extension", function(){
            var t = scope.getIcon("file","DSC_5661.jpg","jpg")
-           expect(t).toEqual("/filemanager/testmapp/DSC_5661.jpg");
+           expect(t).toEqual("/filemanager/fileroot/DSC_5661.jpg");
         });
         it("should return a link to a folder Icon if a folder", function(){
             var t = scope.getIcon("dir","ControlCenter3","");

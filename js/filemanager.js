@@ -1,6 +1,6 @@
 
 function FileManager ($scope,$http,$timeout) {
-    $scope.rootLinkFolder ="/filemanager/testmapp/";
+    $scope.rootLinkFolder ="/filemanager/fileroot/";
     $scope.rootUploadFolder ="/filemanager/plupload/upload_tmp/";
     $scope.rootImageFolder = "/filemanager/img/";
     $scope.rootAPIFolder = "/filemanager/restserver/";
