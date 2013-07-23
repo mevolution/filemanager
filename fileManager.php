@@ -1,5 +1,5 @@
 <?php
-
+/*
 session_start();
 include ('restServer/src/Session.class.php');
 $s = new Session("./users.json");
@@ -9,7 +9,7 @@ $l=true;
 }else {
 header('Location: ./index.php?errorLogin=true');
 }
-
+*/
 ?>
 <!DOCTYPE html>
 <html ng-app xmlns:ng="http://angularjs.org" id="ng-app">
@@ -105,7 +105,7 @@ header('Location: ./index.php?errorLogin=true');
      </div>
      <div class="row-fluid" id="FilelistContainer">
          <div class="span12">
-             <table class="table table-bordered table-striped">
+             <table class="table table-bordered table-striped" id="table-files">
                  <thead>
                  <th ng-click="backDir()">Namn</th>
                  <th>Storlek</th>
@@ -119,8 +119,8 @@ header('Location: ./index.php?errorLogin=true');
 
                  </tr>
 
-                 <tr ng-repeat="file in fileList| filter:search.txt">
-                     <td><a href="{{getLink(file.name,file.type)}}" target="{{getTarget(file.type)}}" ng-click="openDir(file.name,file.type)"><img src="{{getIcon(file.type,file.name,file.ext)}}" class="file-image"  width="40" /> {{file.name}}</a></td>
+                 <tr ng-repeat="file in fileList| filter:search.txt"> <!--target="{{getTarget(file.type)}}" -->
+                     <td class="item-link"><a href="{{getLink(file.name,file.type)}}"  ng-click="openDir(file.name,file.type)" ><img src="{{getIcon(file.type,file.name,file.ext)}}" class="file-image"  width="40" /> {{file.name}}</a></td>
                      <td>{{file.size}}</td>
                      <td><a href="#" ng-click="remove(file.name,file.type)"><i style="color: red" class="icon-remove icon-large"></i> </a></td>
                  </tr>
@@ -143,10 +143,10 @@ header('Location: ./index.php?errorLogin=true');
         <h3 class="modal-title">Skapa Mapp</h3>
     </div>
     <div class="modal-body">
-        <input type="text" placeholder="namn" ng-model="input.Folder">
+        <input type="text" id="new-folder-input" placeholder="namn" ng-model="input.Folder">
     </div>
     <div class="modal-footer">
-        <a class="btn btn-primary" ng-click="createDir(input.Folder)" data-dismiss="modal">
+        <a class="btn btn-primary" id="create-folder-btn"  ng-click="createDir(input.Folder)" data-dismiss="modal">
             <span><i class="icon-plus icon-white"></i> Skapa</span>
         </a>
     </div>
