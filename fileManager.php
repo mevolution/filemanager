@@ -1,5 +1,5 @@
 <?php
-/*
+
 session_start();
 include ('restServer/src/Session.class.php');
 $s = new Session("./users.json");
@@ -9,7 +9,7 @@ $l=true;
 }else {
 header('Location: ./index.php?errorLogin=true');
 }
-*/
+
 ?>
 <!DOCTYPE html>
 <html ng-app xmlns:ng="http://angularjs.org" id="ng-app">
