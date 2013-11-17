@@ -12,7 +12,8 @@ files = [
 
 autoWatch = true;
 
-browsers = ['Chrome','Firefox','Safari'];
+// browsers = ['Chrome','Firefox','Safari'];
+browsers = ['Chrome'];
 
 junitReporter = {
   outputFile: 'test_out/unit.xml',
