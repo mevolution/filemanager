@@ -57,7 +57,7 @@ class Users
              }
        }
 
-        return '{"error":"User allready exists"}';
+        return '{"error":"User already exists"}';
     }
     public  function deleteUser ($email)
     {
